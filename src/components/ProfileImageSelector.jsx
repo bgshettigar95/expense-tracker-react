@@ -29,7 +29,7 @@ const ProfileImageSelector = ({ image, setImage }) => {
   };
 
   return (
-    <div>
+    <div className="flex justify-center items-center">
       <input
         type="file"
         onChange={handleFileChange}

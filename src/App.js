@@ -5,20 +5,24 @@ import SignUp from './pages/Auth/SignUp';
 import Home from './pages/Dashboard/Home';
 import Incomes from "./pages/Dashboard/Incomes";
 import Expenses from "./pages/Dashboard/Expenses";
+import UserProvider from './context/UserContext';
 
 const App = () => {
-  return <div>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Root />} />
-        <Route path="/login" exact element={<Login />} />
-        <Route path="/signUp" exact element={<SignUp />} />
-        <Route path="/dashboard" exact element={<Home />} />
-        <Route path="/incomes" exact element={<Incomes />} />
-        <Route path="/expenses" exact element={<Expenses />} />
-      </Routes>
-    </BrowserRouter>
-  </div>
+
+  return <UserProvider>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Root />} />
+          <Route path="/login" exact element={<Login />} />
+          <Route path="/signUp" exact element={<SignUp />} />
+          <Route path="/dashboard" exact element={<Home />} />
+          <Route path="/incomes" exact element={<Incomes />} />
+          <Route path="/expenses" exact element={<Expenses />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  </UserProvider>
 }
 
 const Root = () => {
